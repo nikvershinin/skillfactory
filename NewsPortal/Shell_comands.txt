@@ -1,0 +1,146 @@
+Команды в Shell
+Импорт файла models
+
+>>>from news.models import *  
+
+1. Создать двух пользователей (с помощью метода User.objects.create_user('username')).
+
+>>> User.objects.create_user(username = 'Nikolai') 
+<User: Nikolai>
+>>> User.objects.create_user(username = 'Regina')  
+<User: Regina>
+
+2. Создать два объекта модели Author, связанные с пользователями.
+
+>>> Author.objects.create(authorUser = User.objects.get(username='Nikolai'))
+<Author: Author object (1)>
+>>> Author.objects.create(authorUser = User.objects.get(username='Regina'))  
+<Author: Author object (2)>
+>>>
+
+3. Добавить 4 категории в модель Category.
+
+>>> Category.objects.create(name = 'Science')
+<Category: Category object (1)>
+>>> Category.objects.create(name = 'IT')      
+<Category: Category object (2)>
+>>> Category.objects.create(name = 'Weather') 
+<Category: Category object (3)>
+>>> Category.objects.create(name = 'Sport')   
+<Category: Category object (4)>
+
+4. Добавить 2 статьи и 1 новость.
+
+>>> a1 = Author.objects.get(authorUser = User.objects.get(username = 'Nikolai')) 
+>>> a2 = Author.objects.get(authorUser = User.objects.get(username = 'Regina')) 
+>>> Post.objects.create(author = a1, categoryType = 'NW', title = 'Сборная России едет на ЧМ 2022', text = 'Сборная России по футболу проиграла команде Хорватии в четвертьфинале чемпионата мира')
+<Post: Post object (1)>
+>>> Post.objects.create(author = a1, categoryType = 'AR', title = 'Глобальное потепление', text = 'Глобальное потепление, которое, по мнению некоторых ученых, может привести к глобальному стихийному бедствию, - это не миф, а реальность.')          
+<Post: Post object (2)>
+>>> Post.objects.create(author = a2, categoryType = 'AR', title = 'Полипропилен', text = 'Полипропилен - это материал, который применяется во многих областях в качестве сырья для изготовления товаров бытовой и промышленной направленности.')          
+<Post: Post object (3)>
+
+5. Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
+
+>>> p1 = Post.objects.get(pk=1) 
+>>> p2 = Post.objects.get(pk=2) 
+>>> p3 = Post.objects.get(pk=3) 
+>>> c1 = Category.objects.get(pk=2)
+>>> c2 = Category.objects.get(pk=2) 
+>>> c3 = Category.objects.get(pk=3) 
+>>> c4 = Category.objects.get(pk=4) 
+>>> PostCategory.objects.create(postThrough=p1,categoryThrough=c4)
+<PostCategory: PostCategory object (1)>
+>>> PostCategory.objects.create(postThrough=p2,categoryThrough=c1) 
+<PostCategory: PostCategory object (2)>
+>>> p2.postCategory.add(c3)   
+>>> PostCategory.objects.create(postThrough=p3,categoryThrough=c1) 
+>>> PostCategory.objects.create(postThrough=p3,categoryThrough=c1)                                     
+<PostCategory: PostCategory object (4)>
+>>> p3.postCategory.add(c3)                                        
+
+6. Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
+
+>>> Comment.objects.create(commentPost=p1, commentUser=User.objects.get(username = 'Nikolai'), text = 'nice news')
+<Comment: Comment object (1)>
+>>> Comment.objects.create(commentPost=p1, commentUser=User.objects.get(username = 'Regina'), text = 'agree, nice news') 
+<Comment: Comment object (2)>
+>>> Comment.objects.create(commentPost=p2, commentUser=User.objects.get(username = 'Regina'), text = 'Yes, i think its real problem of these days') 
+<Comment: Comment object (3)>
+>>> Comment.objects.create(commentPost=p3, commentUser=User.objects.get(username = 'Nikolai'), text = 'So obviously!')                               
+<Comment: Comment object (4)>
+
+7. Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.
+
+>>> com1 = Comment.objects.get(pk=1) 
+>>> com2 = Comment.objects.get(pk=2) 
+>>> com3 = Comment.objects.get(pk=3) 
+>>> com4 = Comment.objects.get(pk=4) 
+>>> p1.like()
+>>> p1.like()
+>>> p2.like() 
+>>> p3.dislike() 
+>>> p3.dislike()
+>>> com1.like()
+>>> com3.like() 
+>>> com4.dislike() 
+
+8. Обновить рейтинги пользователей.
+
+>>> a1 = Author.objects.get(pk=1)
+>>> a2 = Author.objects.get(pk=2)
+>>> a1.update_rating() 
+>>> a2.update_rating() 
+>>> a1.ratingAuthor
+9
+>>> a2.ratingAuthor 
+-5
+
+9. Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
+
+>>> name_bestRat=Author.objects.all().order_by('-ratingAuthor').first().authorUser.username 
+>>> name_bestRat                                                                           
+'Nikolai'
+
+>>> Best_rat=Author.objects.all().order_by('-ratingAuthor').first().ratingAuthor            
+>>> Best_rat                                                                    
+9
+
+10. Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
+
+>>> best_post=Post.objects.all().order_by('-rating')[:1] 
+>>> for i in best_post:    
+...     i.preview()                  
+...     i.title         
+...     i.dateCreation                                    
+...     i.author.authorUser.username
+...
+'Сборная России по футболу проиграла команде Хорватии в четвертьфинале чемпионата мира...'
+'Сборная России едет на ЧМ 2022'
+datetime.datetime(2022, 11, 11, 11, 53, 21, 859004, tzinfo=datetime.timezone.utc)
+'Nikolai'
+
+11. Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
+
+>>> x = Comment.objects.filter(commentPost=Post.objects.all().order_by('-rating').first()) 
+>>> x
+<QuerySet [<Comment: Comment object (1)>, <Comment: Comment object (2)>]>
+>>> for i in x:
+...     i.text
+...
+'nice news'
+'agree, nice news'
+>>> for i in x:
+...     i.dateCreation
+...     i.text
+...     i.rating 
+...     i.commentUser.username
+...
+datetime.datetime(2022, 11, 11, 13, 3, 10, 423130, tzinfo=datetime.timezone.utc)
+'nice news'
+1
+'Nikolai'
+datetime.datetime(2022, 11, 11, 13, 4, 50, 175799, tzinfo=datetime.timezone.utc)
+'agree, nice news'
+0
+'Regina'
