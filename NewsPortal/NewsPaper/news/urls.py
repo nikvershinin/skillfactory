@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import PostList, PostDetail, PostDeleteView, UserFilter, \
-    user_filter, PostCreateView, CatCreateView, PostUpdateView, AuthorCreateView, CatListView, subscribe  # импортируем наше представление
+from .views import *
+# PostList, PostDetail, PostDeleteView, UserFilter, \
+#     user_filter, PostCreateView, CatCreateView, PostUpdateView, AuthorCreateView, CatListView, subscribe, \
+    # index  # импортируем наше представление
 
 urlpatterns = [
     path('', PostList.as_view()),
@@ -13,6 +15,7 @@ urlpatterns = [
     path('create_author/', AuthorCreateView.as_view(), name='create_author'),
     path('category/<int:pk>', CatListView.as_view(), name='category_list'),
     path('category/<int:pk>/subscribe', subscribe, name='subscribe'),
+    # path('index/', index)
 
 ]
 #

@@ -7,6 +7,7 @@ from .models import Post, Category
 from .filters import PostFilter, UserFilter
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
+# from .tasks import text
 
 from .forms import PostForm, CategoryForm, AuthorForm
 
@@ -111,6 +112,17 @@ def subscribe(request, pk):
     message = 'Вы успешно подписались на рассылку новостей категории'
     return render(request, 'news/subscribe.html', {'category': category, 'message': message})
 
+# class WeekView(View):
+#     def get(self, request):
+#         notify_about_new_post.delay()
+#         return redirect("/")
+#
+#
+#
+# class WeekViews(View):
+#     def get(self, request):
+#         notify_weekly.delay()
+#         return redirect("/")
 
 # def create_post(request):
 #     form = PostForm()
@@ -119,3 +131,7 @@ def subscribe(request, pk):
 #             form.save()
 #             return HttpResponseRedirect('/posts/')
 #     return render(request, 'post_create.html', {'form' : form})
+
+# def index(request):
+#     text.delay()
+#     return render(request, 'news/index.html')
