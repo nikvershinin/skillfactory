@@ -1,7 +1,7 @@
 {% extends 'flatpages/default.html' %}
 
 {% block title %}
-Posts
+Category List
 {% endblock title %}
 
 {% block content %}
@@ -9,7 +9,7 @@ Posts
     <hr>
     <!-- форма для поиска -->
 {% if is_not_subscriber %}
-<a href="{% url 'subscribe' category.id %}">Подписаться на новости</a> <br>
+    <a href="{% url 'subscribe' category.id %}">Подписаться на новости</a> <br>
 {% endif %}
 
 </form>

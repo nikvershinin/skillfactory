@@ -1,3 +1,4 @@
+from django.core.cache import cache
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Sum
@@ -61,7 +62,6 @@ class Post(models.Model):
     text = models.TextField(verbose_name='Содержание')
     rating = models.SmallIntegerField(default=0, verbose_name='Рейтинг')
 
-
     def __str__(self):
         return f'{self.title()}: {self.text[:20]}...'
 
@@ -71,7 +71,6 @@ class Post(models.Model):
     def preview(self):
         return self.text[0:123] + '...'
 
-
     def like(self):
         self.rating += 1
         self.save()
@@ -79,6 +78,10 @@ class Post(models.Model):
     def dislike(self):
         self.rating -= 1
         self.save()
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        cache.delete(f'post-{self.pk}')
 
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)

@@ -1,12 +1,13 @@
 from django.urls import path
 from .views import *
-# PostList, PostDetail, PostDeleteView, UserFilter, \
-#     user_filter, PostCreateView, CatCreateView, PostUpdateView, AuthorCreateView, CatListView, subscribe, \
-    # index  # импортируем наше представление
+# from django.views.decorators.cache import cache_page
+
 
 urlpatterns = [
     path('', PostList.as_view()),
     path('<int:pk>', PostDetail.as_view(), name='post'),
+    # path('', cache_page(60*1)(PostList.as_view())),
+    # path('<int:pk>', cache_page(60*5)(PostDetail.as_view()), name='post'),
     path('delete/<int:pk>', PostDeleteView.as_view(), name='post_delete'),
     path('create/', PostCreateView.as_view(), name='create'),
     path('user_list/', user_filter, name="users-list"),

@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User
+from django.core.cache import cache
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 from .models import Post, Category
@@ -37,9 +38,18 @@ class PostList(ListView):
     #     return context
 
 class PostDetail(DetailView):
-    model = Post  # модель всё та же, но мы хотим получать детали конкретно отдельного товара
+    model = Post
     template_name = 'news/post.html'
-    context_object_name = 'post'  # название объекта. в нём будет
+    context_object_name = 'post'
+    queryset = Post.objects.all()
+
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None)
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+        return obj
+
 
 class PostCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     permission_required = ('news.add_post',)

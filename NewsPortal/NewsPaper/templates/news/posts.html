@@ -5,7 +5,12 @@ Posts
 {% endblock title %}
 
 {% block content %}
-    <h1>Количество новостей: {{ posts|length }} </h1>
+    <h1>Количество новостей:
+        {% load cache %}
+        {% cache 100 posts %}
+        {{ posts|length }}
+        {% endcache %}
+    </h1>
     <hr>
     <!-- форма для поиска -->
 <form method="GET">
