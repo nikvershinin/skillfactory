@@ -4,7 +4,7 @@
 Post
 {% endblock title %}
 {% block content %}
-    <h1>Название: {{ post.title|censor }} </h1>
+    <h2>Название: {{ post.title|censor }} </h2>
     <hr>
     {% if post %} <!-- Если есть новости, то выводим таблицу с ними -->
         <table>

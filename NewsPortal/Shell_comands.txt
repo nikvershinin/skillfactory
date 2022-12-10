@@ -12,7 +12,7 @@
 
 2. Создать два объекта модели Author, связанные с пользователями.
 
->>> Author.objects.create(authorUser = User.objects.get(username='Nikolai'))
+>>> Author.objects.create(0-0)
 <Author: Author object (1)>
 >>> Author.objects.create(authorUser = User.objects.get(username='Regina'))  
 <Author: Author object (2)>

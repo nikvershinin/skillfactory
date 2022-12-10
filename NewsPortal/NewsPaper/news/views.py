@@ -2,12 +2,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User
 from django.core.cache import cache
-from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
-from .models import Post, Category
+from .models import Post, Category, Author
 from .filters import PostFilter, UserFilter
-from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404
+
+from django.shortcuts import render, get_object_or_404, redirect
 # from .tasks import text
 
 from .forms import PostForm, CategoryForm, AuthorForm
@@ -32,11 +31,6 @@ class PostList(ListView):
             "filter": self.get_filter(),
         }
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['is_not_author'] = not self.request.user.groups.filter(name='authors').exists()
-    #     return context
-
 class PostDetail(DetailView):
     model = Post
     template_name = 'news/post.html'
@@ -50,18 +44,15 @@ class PostDetail(DetailView):
             cache.set(f'post-{self.kwargs["pk"]}', obj)
         return obj
 
-
 class PostCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     permission_required = ('news.add_post',)
     raise_exception = True
     template_name = 'news/post_create.html'
     form_class = PostForm
 
-# class AuthCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
-#     permission_required = ('news.add_author',)
-#     raise_exception = True
-#     template_name = 'post_create.html'
-#     form_class = PostForm
+    def form_valid(self, form):
+        form.instance.author = self.request.user.author
+        return super().form_valid(form)
 
 class CatCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     permission_required = ('news.add_category',)

@@ -5,12 +5,12 @@ Posts
 {% endblock title %}
 
 {% block content %}
-    <h1>Количество новостей:
+    <h2>Количество новостей:
         {% load cache %}
         {% cache 100 posts %}
         {{ posts|length }}
         {% endcache %}
-    </h1>
+    </h2>
     <hr>
     <!-- форма для поиска -->
 <form method="GET">
@@ -62,10 +62,10 @@ Posts
     {% else %}
         <h2>Новостей нет!</h2>
     {% endif %}
-    {% if perms.news.add_post %}
+
     <a href="{% url 'create' %}">Добавить новую новость</a> <br>
     <hr>
-    {% endif %}
+
     {% if perms.news.add_category %}
     <a href="{% url 'create_category' %}">Добавить новую категорию</a> <br>
     {% endif %}
