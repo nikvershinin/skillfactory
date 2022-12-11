@@ -63,13 +63,12 @@ Posts
         <h2>Новостей нет!</h2>
     {% endif %}
 
-    <a href="{% url 'create' %}">Добавить новую новость</a> <br>
     <hr>
 
     {% if perms.news.add_category %}
     <a href="{% url 'create_category' %}">Добавить новую категорию</a> <br>
     {% endif %}
-    <a href="{% url 'create_author' %}">Стать автором</a> <br>
+
 <!-- Проверяем что поддерживается постраничный вывод -->
     {% if is_paginated %}
 

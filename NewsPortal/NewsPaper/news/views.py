@@ -5,10 +5,8 @@ from django.core.cache import cache
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 from .models import Post, Category, Author
 from .filters import PostFilter, UserFilter
-
 from django.shortcuts import render, get_object_or_404, redirect
 # from .tasks import text
-
 from .forms import PostForm, CategoryForm, AuthorForm
 
 
@@ -30,6 +28,7 @@ class PostList(ListView):
             **super().get_context_data(*args, **kwargs),
             "filter": self.get_filter(),
         }
+
 
 class PostDetail(DetailView):
     model = Post
@@ -54,6 +53,7 @@ class PostCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
         form.instance.author = self.request.user.author
         return super().form_valid(form)
 
+
 class CatCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     permission_required = ('news.add_category',)
     raise_exception = True
@@ -61,11 +61,13 @@ class CatCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     form_class = CategoryForm
     success_url = '/posts/'
 
+
 class AuthorCreateView(LoginRequiredMixin, CreateView):
     raise_exception = True
     template_name = 'news/create_author.html'
     form_class = AuthorForm
     success_url = '/posts/'
+
 
 # дженерик для редактирования объекта
 class PostUpdateView(UpdateView, PermissionRequiredMixin):
@@ -85,9 +87,11 @@ class PostDeleteView(DeleteView, PermissionRequiredMixin):
     queryset = Post.objects.all()
     success_url = '/posts/'
 
+
 def user_filter(request):
     u = UserFilter(request.GET, queryset=User.objects.all())
     return render(request, 'news/user_filter.html', {'filter': u})
+
 
 class CatListView(ListView):
     model = Post
@@ -103,6 +107,7 @@ class CatListView(ListView):
         context['is_not_subscriber'] = self.request.user not in self.category.subscribers.all()
         context['category'] = self.category
         return context
+
 
 @login_required
 def subscribe(request, pk):
