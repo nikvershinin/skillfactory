@@ -133,13 +133,6 @@ def subscribe(request, pk):
 #         notify_weekly.delay()
 #         return redirect("/")
 
-# def create_post(request):
-#     form = PostForm()
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponseRedirect('/posts/')
-#     return render(request, 'post_create.html', {'form' : form})
 
 # def index(request):
 #     text.delay()
