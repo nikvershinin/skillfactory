@@ -50,9 +50,12 @@ class PostCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     form_class = PostForm
 
     def form_valid(self, form):
+        user = get_object_or_404(User, username=self.request.user)
+        if not Author.objects.filter(authorUser__username=user).exists():#проверка, есть ли связь юзер-автор
+            author = Author(authorUser=user)
+            author.save()
         form.instance.author = self.request.user.author
         return super().form_valid(form)
-
 
 class CatCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     permission_required = ('news.add_category',)
