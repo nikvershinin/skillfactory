@@ -8,6 +8,10 @@ from .filters import PostFilter, UserFilter
 from django.shortcuts import render, get_object_or_404, redirect
 # from .tasks import text
 from .forms import PostForm, CategoryForm, AuthorForm
+import logging
+
+# Get an instance of a logger
+# logger = logging.getLogger(__name__)
 
 
 class PostList(ListView):

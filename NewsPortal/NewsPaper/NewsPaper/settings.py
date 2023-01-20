@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
-
-
 from dotenv import load_dotenv
 
 load_dotenv()  # take environment variables from .env.
@@ -208,5 +206,108 @@ CACHES = {
         # 'OPTIONS': {
         #     'MAX_ENTRIES': 1000
         # }
+    }
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'for_console_simple': {
+            'format': '{asctime} {levelname} {message}',
+            'style': '{'
+        },
+        'for_warning': {
+            'format': '{asctime} {levelname} {message} {pathname}',
+            'style': '{'
+        },
+        'for_error_and_crytical': {
+            'format': '{asctime} {levelname} {message} {pathname} {exc_info}',
+            'style': '{'
+        }
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'for_console_simple'
+        },
+        'console_warning': {
+            'level': 'WARNING',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'for_warning'
+        },
+        'console_error': {
+            'level': 'ERROR',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'for_error_and_crytical'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler',
+            # 'include_html': True
+        },
+        'news_general': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'for_console_simple',
+            'filename': 'general.log'
+        },
+        'news_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'formatter': 'for_warning',
+            'filename': 'errors.log'
+        },
+        'news_security': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'for_error_and_crytical',
+            'filename': 'security.log'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'news_general', 'console_warning', 'console_error'],
+            'level': 'INFO',
+            'propagate': True
+        },
+        'django.request': {
+            'handlers': ['news_general'],
+            'level': 'INFO',
+            'propagate': True
+        },
+        'django.template': {
+            'handlers': ['news_error'],
+            'level': 'ERROR',
+            'propagate': False
+        },
+        'django.server': {
+            'handlers': ['news_error'],
+            'level': 'ERROR',
+            'propagate': False
+        },
+        'django.db.backends': {
+            'handlers': ['news_error'],
+            'level': 'ERROR',
+            'propagate': False
+        },
+        'django.security': {
+            'handlers': ['news_security'],
+            'level': 'INFO',
+            'propagate': False
+        }
     }
 }
