@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
     'allauth.socialaccount.providers.yandex',
     'django_apscheduler',
+    'rest_framework',
 ]
 
 SITE_ID = 1
