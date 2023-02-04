@@ -1,4 +1,4 @@
-"""NewsPaper URL Configuration
+"""Dashboard URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -18,9 +18,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pages', include('django.contrib.flatpages.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    # path('pages', include('django.contrib.flatpages.urls')),
+    # # path('accounts/', include('django.contrib.auth.urls')),
     path('post/', include('news.urls')),
-    path('accounts/', include('accounts.urls')),
-    path('accounts/', include('allauth.urls')),
+    path(r'^redactor/', include('redactor.urls')),
+    # # path('accounts/', include('accounts.urls')),
+    # path('accounts/', include('allauth.urls')),
 ]
