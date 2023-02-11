@@ -1,12 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
-from redactor.fields import RedactorField
+
 
 
 class Author(models.Model):
     authorUser = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    def get_absolute_url(self):  # добавим абсолютный путь, чтобы после создания нас перебрасывало на страницу с товаром
+    def get_absolute_url(self):
         return f'/posts/{self.pk}'
 
     def __str__(self):
@@ -16,25 +16,27 @@ class Author(models.Model):
         verbose_name = 'Автор'
         verbose_name_plural = 'Авторы'
 
-class Comment(models.Model):
-    commentPost = models.ForeignKey(Post, on_delete=models.CASCADE)
-    commentUser = models.ForeignKey(User, on_delete=models.CASCADE)
-    text = models.TextField()
-    dateCreation = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f'{self.pk} {self.commentUser.username} {self.commentPost.title[:200]}'
-
-    class Meta:
-        verbose_name = 'Комментарий'
-        verbose_name_plural = 'Комментарии'
+class Category(models.Model):
+    CATEGORY_CHOISES = (
+        ('tanks', 'Танки'),
+        ('heals', 'Хилы'),
+        ('dd', 'ДД'),
+        ('traders', 'Торговцы'),
+        ('guildMasters', 'Гилдмастеры'),
+        ('smiths', 'Кузнецы'),
+        ('skinmakers', 'Кожевники'),
+        ('poisonmakers', 'Зельевары'),
+        ('spellmasters', 'Мастера заклинаний'),
+    )
+    categoryType = models.CharField(max_length=32, choices=CATEGORY_CHOISES, default='tanks', verbose_name='Категория')
+    subscribers = models.ManyToManyField(User, related_name='categories')
 
 class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name='Автор')
     dateCreation = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
-    postCategory = models.ManyToManyField(Category, verbose_name='Категория')
     title = models.CharField(max_length=128, verbose_name='Заголовок')
-    short_text = RedactorField(verbose_name=u'Text')
+    text = models.TextField()
+    upload = models.FileField(upload_to='media/')
 
     def __str__(self):
         return f'{self.title()}: {self.text[:20]}...'
@@ -45,26 +47,17 @@ class Post(models.Model):
     def preview(self):
         return self.text[0:123] + '...'
 
-class Category(models.Model):
-    postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
-    Tanks = 'ТК'
-    Heals = 'ХЛ'
-    DD = 'ДД'
-    Traders = 'ТЦ'
-    GuildMasters = 'ГМ'
-    Smiths = 'КЦ'
-    Skinmakers = 'КЖ'
-    Poisonmakers = 'ЗВ'
-    Spellmasters = 'МЗ'
+class Comment(models.Model):
+    commentPost = models.ForeignKey(Post, on_delete=models.CASCADE)
+    commentUser = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    dateCreation = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=False)
 
-    CATEGORY_CHOISES = (
-        (Tanks, 'Танки'),
-        (Heals, 'Хилы'),
-        (DD, 'ДД'),
-        (Traders, 'Торговцы'),
-        (GuildMasters, 'Гилдмастеры'),
-        (Smiths, 'Кузнецы'),
-        (Skinmakers, 'Кожевники'),
-        (Poisonmakers, 'Зельевары'),
-        (Spellmasters, 'Мастера заклинаний'),
-    )
+    def __str__(self):
+        return f'{self.pk} {self.commentUser.username} {self.commentPost.title[:200]}'
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+
