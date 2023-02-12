@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Author(models.Model):
-    authorUser = models.OneToOneField(User, on_delete=models.CASCADE)
+    authorUser = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='Автор')
 
     def get_absolute_url(self):
         return f'/posts/{self.pk}'
@@ -36,7 +36,12 @@ class Post(models.Model):
     dateCreation = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
     title = models.CharField(max_length=128, verbose_name='Заголовок')
     text = models.TextField()
-    upload = models.FileField(upload_to='media/')
+    # upload = models.FileField(upload_to='media/')
+    postCategory = models.ManyToManyField(Category, verbose_name='Категория')
+
+    class Meta:
+        verbose_name = 'Объясвление'
+        verbose_name_plural = 'Объявления'
 
     def __str__(self):
         return f'{self.title()}: {self.text[:20]}...'
