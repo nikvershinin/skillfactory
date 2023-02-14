@@ -1,142 +1,141 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.contrib.auth.models import User
-from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
-from .models import *
-# from .filters import PostFilter, UserFilter
-# from django.shortcuts import render, get_object_or_404, redirect
-# from .tasks import text
-# from .forms import PostForm, CategoryForm, AuthorForm
-import logging
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 
-# Get an instance of a logger
-# logger = logging.getLogger(__name__)
+from .forms import ReplyForm, PostForm
+from .models import Post, Comment, Author, Category
 
 
-class PostList(ListView):
+class IndexView(ListView):
     model = Post
-    template_name = 'posts/post.html'
+    ordering = '-created'
+    template_name = 'index.html'
+    context_object_name = 'posts'
+
+
+class PostDetailView(DetailView):
+    model = Post
+    ordering = '-created'
+    template_name = 'post_detail.html'
     context_object_name = 'post'
-    ordering = ['-dateCreation']
-    paginate_by = 10
-
-    # def get_filter(self):
-    #     return PostFilter(self.request.GET, queryset=super().get_queryset())
-
-    # def get_queryset(self):
-    #     return self.get_filter().qs
-
-    # def get_context_data(self, *args, **kwargs):
-    #     return {
-    #         **super().get_context_data(*args, **kwargs),
-    #         "filter": self.get_filter(),
-    #     }
 
 
-class PostDetail(DetailView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    template_name = 'posts/post.html'
-    context_object_name = 'post'
-    queryset = Post.objects.all()
-
-    def get_object(self, *args, **kwargs):
-        obj = cache.get(f'post-{self.kwargs["pk"]}', None)
-        if not obj:
-            obj = super().get_object(queryset=self.queryset)
-            cache.set(f'post-{self.kwargs["pk"]}', obj)
-        return obj
-
-class PostCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
-    permission_required = ('news.add_post',)
-    raise_exception = True
-    template_name = 'news/post_create.html'
+    success_url = ''
     form_class = PostForm
+    template_name = 'post_create.html'
 
-    def form_valid(self, form):
-        user = get_object_or_404(User, username=self.request.user)
-        if not Author.objects.filter(authorUser__username=user).exists():#проверка, есть ли связь юзер-автор
-            author = Author(authorUser=user)
-            author.save()
-        form.instance.author = self.request.user.author
-        return super().form_valid(form)
-
-class CatCreateView(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
-    permission_required = ('news.add_category',)
-    raise_exception = True
-    template_name = 'news/category_create.html'
-    form_class = CategoryForm
-    success_url = '/posts/'
+    def post(self, request, *args, **kwargs):
+        obj = Post(
+            title=request.POST['title'],
+            content=request.POST['content'],
+            category=Category.objects.get(id=request.POST['category']),
+            author=Author.objects.get(name=request.user)
+        )
+        obj.save()
+        return redirect('index')
 
 
-class AuthorCreateView(LoginRequiredMixin, CreateView):
-    raise_exception = True
-    template_name = 'news/create_author.html'
-    form_class = AuthorForm
-    success_url = '/posts/'
-
-
-# дженерик для редактирования объекта
-class PostUpdateView(UpdateView, PermissionRequiredMixin):
-    permission_required = ('news.change_post',)
-    template_name = 'news/post_update.html'
-    form_class = PostForm
-
-    # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте, который мы собираемся редактировать
-    def get_object(self, **kwargs):
-        id = self.kwargs.get('pk')
-        return Post.objects.get(pk=id)
-
-# дженерик для удаления товара
-class PostDeleteView(DeleteView, PermissionRequiredMixin):
-    permission_required = ('news.delete_post',)
-    template_name = 'news/post_delete.html'
-    queryset = Post.objects.all()
-    success_url = '/posts/'
-
-
-def user_filter(request):
-    u = UserFilter(request.GET, queryset=User.objects.all())
-    return render(request, 'news/user_filter.html', {'filter': u})
-
-
-class CatListView(ListView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
-    template_name = 'news/category_list.html'
-    context_object_name = 'category_list'
+    success_url = reverse_lazy('index')
+    fields = ['title', 'content', 'category']
+    template_name = 'post_update.html'
+
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+    success_url = reverse_lazy('index')
+    template_name = 'post_delete.html'
+
+
+# Not the best fulfillment ...
+@login_required
+def reply(request, pk):
+    author, status = Author.objects.get_or_create(name=request.user)
+    post = Post.objects.get(id=pk)
+    form = ReplyForm()
+    context = {'post': post,
+               'form': form,
+               'author': author
+               }
+    return render(request, 'reply.html', context)
+
+
+def replied(request, pk):
+    content = request.POST['content']
+    author = Author.objects.get(name=request.user)
+    post = Post.objects.get(id=pk)
+    Comment.objects.create(author=author, post=post, content=content)
+    return redirect('index')
+
+
+class PrivateOfficeView(LoginRequiredMixin, ListView):
+    model = Comment
+    template_name = 'private_office.html'
+    context_object_name = 'replies'
 
     def get_queryset(self):
-        self.category = get_object_or_404(Category, id=self.kwargs['pk'])
-        queryset = Post.objects.filter(postCategory=self.category).order_by('-dateCreation')
+        author, status = Author.objects.get_or_create(name=self.request.user)
+        queryset = Comment.objects.filter(post__author=author).order_by('-created')
         return queryset
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['is_not_subscriber'] = self.request.user not in self.category.subscribers.all()
-        context['category'] = self.category
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['current_user'] = Author.objects.get(name=self.request.user)
         return context
 
 
+class SortedByPostView(ListView):
+    model = Comment
+    template_name = 'replies_by_post.html'
+    ordering = '-created'
+    context_object_name = 'replies'
+
+    def get_queryset(self):
+        queryset = Comment.objects.filter(post=Post.objects.get(id=self.kwargs['post_id']))
+        return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['this_post'] = Post.objects.get(id=self.kwargs['post_id'])
+        return context
+
+
+class ReplyDetailView(DetailView):
+    model = Comment
+    ordering = '-created'
+    template_name = 'reply_detail.html'
+    context_object_name = 'reply'
+
+
+class ReplyDeleteView(DeleteView):
+    model = Comment
+    success_url = reverse_lazy('private_office')
+    template_name = 'reply_delete.html'
+
+
+def reply_approve(request, pk):
+    obj = Comment.objects.get(id=pk)
+    obj.approved = True
+    obj.save()
+    return redirect('/private')
+
+
 @login_required
-def subscribe(request, pk):
-    user = request.user
-    category = Category.objects.get(id=pk)
-    category.subscribers.add(user)
-
-    message = 'Вы успешно подписались на рассылку новостей категории'
-    return render(request, 'news/subscribe.html', {'category': category, 'message': message})
-
-# class WeekView(View):
-#     def get(self, request):
-#         notify_about_new_post.delay()
-#         return redirect("/")
-#
-#
-#
-# class WeekViews(View):
-#     def get(self, request):
-#         notify_weekly.delay()
-#         return redirect("/")
+def subscribe(request):
+    obj = Author.objects.get(name=request.user)
+    obj.is_subscriber = True
+    obj.save()
+    return redirect('/private')
 
 
-# def index(request):
-#     text.delay()
-#     return render(request, 'news/index.html')
+@login_required
+def unsubscribe(request):
+    obj = Author.objects.get(name=request.user)
+    obj.is_subscriber = False
+    obj.save()
+    return redirect('/private')
