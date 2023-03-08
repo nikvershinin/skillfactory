@@ -2,3 +2,363 @@
 2023-01-20 16:13:06,234 INFO C:\project\skillfactory\NewsPortal\NewsPaper\NewsPaper\settings.py changed, reloading.
 2023-01-20 16:13:07,316 INFO Watching for file changes with StatReloader
 2023-01-20 16:15:35,148 INFO Watching for file changes with StatReloader
+2023-03-07 10:22:41,795 INFO Watching for file changes with StatReloader
+2023-03-07 10:22:58,476 INFO Watching for file changes with StatReloader
+2023-03-07 10:24:08,988 INFO Watching for file changes with StatReloader
+2023-03-07 10:24:12,928 WARNING Not Found: /
+2023-03-07 10:24:12,928 WARNING Not Found: /
+2023-03-07 10:24:13,271 WARNING Not Found: /favicon.ico
+2023-03-07 10:24:13,271 WARNING Not Found: /favicon.ico
+2023-03-07 10:24:20,435 WARNING Not Found: /posts/
+2023-03-07 10:24:20,435 WARNING Not Found: /posts/
+2023-03-07 11:08:23,528 INFO Watching for file changes with StatReloader
+2023-03-07 11:08:25,615 WARNING Not Found: /
+2023-03-07 11:08:25,615 WARNING Not Found: /
+2023-03-07 11:08:34,933 WARNING Not Found: /aboutme
+2023-03-07 11:08:34,933 WARNING Not Found: /aboutme
+2023-03-07 11:08:44,912 WARNING Not Found: /aboutme/
+2023-03-07 11:08:44,912 WARNING Not Found: /aboutme/
+2023-03-07 11:08:50,528 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: aboutme/index.html
+2023-03-07 11:08:50,528 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: aboutme/index.html
+2023-03-07 19:12:28,600 INFO Watching for file changes with StatReloader
+2023-03-08 19:33:54,365 INFO Watching for file changes with StatReloader
+2023-03-08 19:33:56,220 WARNING Not Found: /
+2023-03-08 19:33:56,220 WARNING Not Found: /
+2023-03-08 19:34:02,547 WARNING Not Found: /posts/
+2023-03-08 19:34:02,547 WARNING Not Found: /posts/
+2023-03-08 19:59:11,774 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 19:59:11,774 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 19:59:31,477 WARNING Not Found: /aboutme/index/.gorilla.jpg
+2023-03-08 19:59:31,477 WARNING Not Found: /aboutme/index/.gorilla.jpg
+2023-03-08 19:59:32,580 WARNING Not Found: /aboutme/index/.gorilla.jpg
+2023-03-08 19:59:32,580 WARNING Not Found: /aboutme/index/.gorilla.jpg
+2023-03-08 20:01:36,572 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:01:36,572 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:03:32,692 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:03:32,692 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:03:34,453 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:03:34,453 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:10:59,116 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:10:59,116 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:00,284 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:00,284 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:02,965 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:02,965 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:56,865 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:56,865 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:57,545 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:57,545 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:57,986 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:57,986 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:58,366 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:58,366 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:58,527 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 20:11:58,527 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-08 22:08:40,732 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:08:40,732 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:08:42,690 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:08:42,690 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:13:53,908 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:13:53,908 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:15:15,882 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:15:15,882 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:15:33,927 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:15:33,927 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:16:16,172 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:16:16,172 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:16:44,780 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:16:44,780 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:17:37,586 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:17:37,586 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:18:13,158 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:18:13,158 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:19:06,220 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:19:06,220 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:20:24,628 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:20:24,628 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:20:49,144 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:20:49,144 WARNING Not Found: /aboutme/index/system/images/line_20.png
+2023-03-08 22:21:46,967 WARNING Not Found: /aboutme/index/<img src=
+2023-03-08 22:21:46,967 WARNING Not Found: /aboutme/index/<img src=
+2023-03-08 22:21:47,998 WARNING Not Found: /aboutme/index/<img src=
+2023-03-08 22:21:47,998 WARNING Not Found: /aboutme/index/<img src=
+2023-03-08 23:30:11,560 WARNING Not Found: /aboutme/index/css/styles.css
+2023-03-08 23:30:11,560 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-08 23:30:11,560 WARNING Not Found: /aboutme/index/css/styles.css
+2023-03-08 23:30:11,560 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-08 23:30:11,903 WARNING Not Found: /aboutme/index/assets/favicon.ico
+2023-03-08 23:30:11,903 WARNING Not Found: /aboutme/index/assets/favicon.ico
+2023-03-08 23:30:15,162 WARNING Not Found: /aboutme/index/css/styles.css
+2023-03-08 23:30:15,163 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-08 23:30:15,162 WARNING Not Found: /aboutme/index/css/styles.css
+2023-03-08 23:30:15,163 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-08 23:31:02,976 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
+2023-03-08 23:31:02,976 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
+2023-03-08 23:31:09,136 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
+2023-03-08 23:31:09,136 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
+2023-03-08 23:31:25,320 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
+2023-03-08 23:31:25,320 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
+2023-03-08 23:31:52,647 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-08 23:31:52,647 WARNING Not Found: /aboutme/index/js/scripts.js

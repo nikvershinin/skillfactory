@@ -23,4 +23,5 @@ urlpatterns = [
     path('post/', include('news.urls')),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('allauth.urls')),
+    path('aboutme/', include('aboutme.urls'))
 ]
