@@ -362,3 +362,404 @@ Traceback (most recent call last):
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
 2023-03-08 23:31:52,647 WARNING Not Found: /aboutme/index/js/scripts.js
 2023-03-08 23:31:52,647 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 15:53:39,070 INFO Watching for file changes with StatReloader
+2023-03-10 15:54:03,653 WARNING Not Found: /
+2023-03-10 15:54:03,653 WARNING Not Found: /
+2023-03-10 15:54:03,923 WARNING Not Found: /favicon.ico
+2023-03-10 15:54:03,923 WARNING Not Found: /favicon.ico
+2023-03-10 15:54:10,021 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 15:54:10,021 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 15:54:10,103 WARNING Not Found: /aboutme/index/assets/favicon.ico
+2023-03-10 15:54:10,103 WARNING Not Found: /aboutme/index/assets/favicon.ico
+2023-03-10 15:56:42,676 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 15:56:42,676 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 15:57:49,197 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 15:57:49,197 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 15:58:19,033 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 15:58:19,033 WARNING Not Found: /aboutme/index/js/scripts.js
+2023-03-10 16:14:03,678 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-10 16:14:03,678 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-10 16:14:35,481 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-10 16:14:35,481 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-10 16:14:36,692 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-10 16:14:36,692 WARNING Not Found: /aboutme/index/gorilla.jpg
+2023-03-10 16:51:31,114 INFO C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\urls.py changed, reloading.
+2023-03-10 16:51:34,883 INFO Watching for file changes with StatReloader
+2023-03-10 16:56:28,933 INFO Watching for file changes with StatReloader
+2023-03-10 17:04:57,531 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme' not found. 'aboutme' is not a valid view function or pattern name.
+2023-03-10 17:04:57,531 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme' not found. 'aboutme' is not a valid view function or pattern name.
+2023-03-10 17:08:56,321 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme' not found. 'aboutme' is not a valid view function or pattern name.
+2023-03-10 17:08:56,321 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme' not found. 'aboutme' is not a valid view function or pattern name.
+2023-03-10 17:09:00,509 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme' not found. 'aboutme' is not a valid view function or pattern name.
+2023-03-10 17:09:00,509 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme' not found. 'aboutme' is not a valid view function or pattern name.
+2023-03-10 17:13:34,390 INFO Watching for file changes with StatReloader
+2023-03-10 17:13:36,686 WARNING Not Found: /
+2023-03-10 17:13:36,686 WARNING Not Found: /
+2023-03-10 17:13:42,623 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme' not found. 'aboutme' is not a valid view function or pattern name.
+2023-03-10 17:13:42,623 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme' not found. 'aboutme' is not a valid view function or pattern name.
+2023-03-10 17:14:30,722 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme/aboutme' not found. 'aboutme/aboutme' is not a valid view function or pattern name.
+2023-03-10 17:14:30,722 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme/aboutme' not found. 'aboutme/aboutme' is not a valid view function or pattern name.
+2023-03-10 17:16:33,570 INFO C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\urls.py changed, reloading.
+2023-03-10 17:16:35,725 INFO Watching for file changes with StatReloader
+2023-03-10 17:16:41,799 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme/aboutme' not found. 'aboutme/aboutme' is not a valid view function or pattern name.
+2023-03-10 17:16:41,799 ERROR Internal Server Error: /aboutme/index/
+Traceback (most recent call last):
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\project\skillfactory\NewsPortal\NewsPaper\aboutme\views.py", line 4, in index
+    return render(request, 'aboutme/index.html')
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\template\defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aboutme/aboutme' not found. 'aboutme/aboutme' is not a valid view function or pattern name.

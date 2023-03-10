@@ -2,3 +2,9 @@
 2023-03-08 23:31:02,976 ERROR "GET /aboutme/index/ HTTP/1.1" 500 149959 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
 2023-03-08 23:31:09,141 ERROR "GET /aboutme/index/ HTTP/1.1" 500 149959 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
 2023-03-08 23:31:25,325 ERROR "GET /aboutme/index/ HTTP/1.1" 500 149959 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
+2023-03-10 17:04:57,563 ERROR "GET /aboutme/index/ HTTP/1.1" 500 127490 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
+2023-03-10 17:08:56,340 ERROR "GET /aboutme/index/ HTTP/1.1" 500 127490 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
+2023-03-10 17:09:00,520 ERROR "GET /aboutme/index/ HTTP/1.1" 500 127483 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
+2023-03-10 17:13:42,635 ERROR "GET /aboutme/index/ HTTP/1.1" 500 127352 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
+2023-03-10 17:14:30,749 ERROR "GET /aboutme/index/ HTTP/1.1" 500 127716 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
+2023-03-10 17:16:41,821 ERROR "GET /aboutme/index/ HTTP/1.1" 500 127716 C:\project\skillfactory\NewsPortal\venv\lib\site-packages\django\core\servers\basehttp.py
