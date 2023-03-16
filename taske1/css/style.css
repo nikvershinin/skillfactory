@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    border: 1px solid #b5b7ba;
+    background-color: #101010;
+    min-width: 1280px;
+    height: 50px;
+    text-align: center;
+    padding-top: 18px;
+}
+
+/*
+.navigation{
+    float: right;
+    height: 100%;
+}
+
+.navigation a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+    background-color: #101010;
+}
+
+.navigation a li{
+    vertical-align: middle;
+    display: table-cell;
+    font-size: 20px;
+    color: white;
+}
+
+.navigation a:hover{
+    background-color: gray;
+    color: #101010;
+}
+*/
+
+body{
+    font-family: 'Roboto';
+}
+
+
+.txt{
+    font-size: 19px;
+    color: #FFFFFF;
+    padding: 30px;    
+}
+
+
+a{
+    text-decoration: none;
+}
+
+a:hover {
+    color: #434E97;
+}
+
+
+h1{
+    text-align: center;
+}
+
+.pic{
+    width: 400px;
+    border: 1px solid #e4e4e4;
+    
+}
+
+.text{
+    float: right;
+    background-color: #ffffff;
+    width: 500px;
+    font-size: 18px;
+    margin: 10px 200px 0 0;
+}
+
+.col{
+    color: darkgreen
+}
+
+p{
+    text-align: center;
+}
+
+#list{
+    width: 1000px;
+    margin: auto;
+/*    text-align: center;*/
+}
+
+.list1{
+    width: 400px;
+    margin: auto;
+}
+
+ul{
+    text-align: justify;
+}
+footer{
+    margin-top: 10px;
+    height: 50px;
+    background-color: brown;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#table1{
+    width: 100px;
+    margin: auto;
+    text-align: center;
+}
