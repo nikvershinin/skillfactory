@@ -57,47 +57,85 @@
 // Таких приборов должно быть, как минимум, два
 // (например, настольная лампа и компьютер).
 // Выбрав прибор, подумайте, какими свойствами он обладает.
-function Equipment(name, power){
-    this.name = name;
-    this.typeIs = 'электроприбор';
-    this.isOn = false
-    this.power = power;
-}
-Equipment.prototype.setisOn = function () {
-    this.isOn = true;
-}
-Equipment.prototype.setisOf = function () {
-    this.isOn = false;
-}
-Equipment.prototype.getisOn = function () {
-    if (this.isOn = true){
-        console.log(this.name+' включено')
-    }else {
-    console.log(this.isOn+ 'выключено')
-}}
-Equipment.prototype.powerAll = function () {
-    if (this.isOn = true){
-        console.log(this.name+' включено')
-    }else {
-        console.log(this.isOn+ 'выключено')
-    }}
+// function Equipment(name, power){
+//     this.name = name;
+//     this.typeIs = 'электроприбор';
+//     this.isOn = false
+//     this.power = power;
+// }
+// Equipment.prototype.setisOn = function () {
+//     this.isOn = true;
+// }
+// Equipment.prototype.setisOf = function () {
+//     this.isOn = false;
+// }
+// Equipment.prototype.getisOn = function () {
+//     if (this.isOn = true){
+//         console.log(this.name+' включено')
+//     }else {
+//     console.log(this.isOn+ 'выключено')
+// }}
 
+// const light = new Equipment('Лампа', 30);
+// const computer = new Equipment('Компьютер', 40);
+//
+// computer.setisOn();
+// light.setisOn();
+//
+// let result = 0;
+// function powerSum(){
+//     for (let i in arguments){
+//         let values = Object.entries(arguments[i]);
+//         for (j in values){
+//             // console.log(values[j])
+//             if (values[j][0] == 'power'){
+//                 result += values[j][1]
+//             }
+//         }
+//     }}
+// powerSum(light, computer)
+// console.log(result)
 
-
-const light = new Equipment('Лампа', 30);
-const computer = new Equipment('Компьютер', 40);
-
-computer.setisOn();
-light.setisOn();
-
-function powerSum(args){
-    let result = 0;
-    for (let i in args){
-        console.log(i[this.power]);
-        result += i[this.power];
-    }
-
-    console.log(result);
-    return result;
-    }
-powerSum(computer)
+//task5
+// class Equipment{
+//     constructor(name, power) {
+//     this.typeIs = 'электроприбор';
+//     this.isOn = false
+//     this.name = name
+//     this.power = power
+//     }
+//     setisOn() {
+//         this.isOn = true;
+//     }
+//     setisOf() {
+//         this.isOn = false;
+//     }
+//     getisOn() {
+//         if (this.isOn){
+//             console.log(this.name+' включено')
+//         }else {
+//             console.log(this.isOn+ 'выключено')
+//         }
+//     }
+// }
+//
+// const light = new Equipment('Лампа', 30);
+// const computer = new Equipment('Компьютер', 40);
+//
+// computer.setisOn();
+// light.setisOn();
+//
+// let result = 0;
+// function powerSum(){
+//     for (let i in arguments){
+//         let values = Object.entries(arguments[i]);
+//         for (j in values){
+//             // console.log(values[j])
+//             if (values[j][0] == 'power'){
+//                 result += values[j][1]
+//             }
+//         }
+//     }
+// }
+// powerSum(light, computer)
+// console.log(result)
